@@ -1,6 +1,6 @@
  <html lang="esp">
  <head>
-	 <title>CARGA DE PEDIDOS</title>
+	 <title>PRINCIPAL</title>
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	 <link rel="stylesheet" href="" type="text/css"/>
  </head>
@@ -53,61 +53,10 @@
 	      </tr>
 	      <tr><td></td>
 		  <td>
-			 <p>Carga de PEDIDO</p>
-			 <form action="CIERRE_PEDIDO.php" method="post">
-				<p> Cliente </p>				
-				<select name="Entidad">
-					<?php 	
-						$query="SELECT ENTIDAD,NOMBRE FROM u192212072_reina.ENTIDAD";
-						$resultado=mysqli_query($result_coneccion,$query);
-						while ($entidad = mysqli_fetch_assoc($resultado)) {
-						echo '<option value="'.$entidad["ENTIDAD"].'">'.$entidad["NOMBRE"]."</option>";
-						}
-					?>				
-				</select>
-				<br>
-				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
-				<p>Items Vendidos</p>
-				<select name="Item1">
-				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u192212072_reina.ITEMS";
-						$resultado=mysqli_query($result_coneccion,$query);
-						while ($item = mysqli_fetch_assoc($resultado)) {
-						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
-						}
-					?>
-				</select>
-				Unidades : <input type="text" name="Unidades1">   
-				<br>
-				
+			 <p>MENU</p>
 
-				<select name="Item2">
-				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u192212072_reina.ITEMS";
-						$resultado=mysqli_query($result_coneccion,$query);
-						while ($item = mysqli_fetch_assoc($resultado)) {
-						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
-						}
-					?>
-				</select>	
-				Unidades : <input type="text" name="Unidades2">   
-				<br>
-				
-				<select name="Item3">
-				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u192212072_reina.ITEMS";
-						$resultado=mysqli_query($result_coneccion,$query);
-						while ($item = mysqli_fetch_assoc($resultado)) {
-						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
-						}
-					?>
-				</select>
-				Unidades : <input type="text" name="Unidades3">   
-				
-				<br><br>
-				<input type="submit" value="Ingresar">
-			</form>
-		  </td>
+
+			 </td>
 		  <td></td></tr>
 	     </table>
 	    </form>
