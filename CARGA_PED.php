@@ -1,6 +1,6 @@
  <html lang="esp">
  <head>
-	 <title>PRINCIPAL</title>
+	 <title>CARGA DE PEDIDOS</title>
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	 <link rel="stylesheet" href="" type="text/css"/>
  </head>
@@ -53,8 +53,8 @@
 	      </tr>
 	      <tr><td></td>
 		  <td>
-			 <p>Carga de VENTA</p>
-			 <form action="CIERRE_VENTA.php" method="post">
+			 <p>Carga de PEDIDO</p>
+			 <form action="CIERRE_PEDIDO.php" method="post">
 				<p> Cliente </p>				
 				<select name="Entidad">
 					<?php 	
@@ -109,21 +109,7 @@
 				Unidades : <input type="text" name="Unidades3">   
 				Precio : <input type="text" name="Precio_Unit3">
 				<input type="checkbox" name="Entregado3" value="S">
-				<br>
 				
-				<p> Cuenta Corriente Destino </p>				
-				<select name="Cta_cte">
-					<?php 	
-						$query="SELECT CTA_CTE,DETALLE FROM u192212072_reina.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
-						$resultado=mysqli_query($result_coneccion,$query);
-						while ($cta_cte = mysqli_fetch_assoc($resultado)) {
-						echo '<option value="'.$cta_cte["CTA_CTE"].'">'.$cta_cte["DETALLE"]."</option>";
-						}
-					?>				
-				</select>
-				<br>
-				<p> Monto Cobrado </p>
-				<input type="text" name="Cobrado">
 				<br><br>
 				<input type="submit" value="Ingresar">
 			</form>

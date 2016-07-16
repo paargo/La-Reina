@@ -12,7 +12,7 @@
 				<?php
 				 //Conexion
 					$host="mysql.hostinger.com.ar";
-					$user="u192212072_pablo";
+					$user="u845291486_pablo";
 					$password="895895";
 					
 					$result_coneccion=mysqli_connect($host,$user,$password);
