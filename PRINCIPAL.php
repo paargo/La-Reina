@@ -28,19 +28,18 @@
 				$_SESSION['Clave']=$_POST['Clave'];					
 			
 				
-	 /*Pruebas BKP	$sql="SELECT NOMBRE FROM u845291486_pablo.USUARIOS WHERE USUARIO=".$_POST[Usuario];
+	 /*Pruebas BKP	$sql="SELECT NOMBRE FROM u845291486_reina.USUARIOS WHERE USUARIO=".$_POST[Usuario];
 					$result=mysqli_query($result_coneccion,$sql);
 					$res_imprimible=mysqli_fetch_array($result, MYSQLI_ASSOC);
 					echo $res_imprimible["NOMBRE"];*/
 	
-	/*				$sql="SELECT USUARIO FROM u845291486_pablo.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'"; */
-					$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='PABLO'"; 
+	     			$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'"; 
 					$result=mysqli_query($result_coneccion,$sql);
 					$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
 						
 					
 			//Inicio algoritmo resumen cuentas corrientes
-					$query="SELECT DETALLE,SALDO FROM u845291486_pablo.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
+					$query="SELECT DETALLE,SALDO FROM u845291486_reina.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
 					$resultado=mysqli_query($result_coneccion,$query);
 					echo "Saldos Cuentas corrientes Usuario ".$_POST['Usuario']." son:"."<br><br>";
 					
@@ -60,7 +59,7 @@
 				<p> Cliente </p>				
 				<select name="Entidad">
 					<?php 	
-						$query="SELECT ENTIDAD,NOMBRE FROM u845291486_pablo.ENTIDAD";
+						$query="SELECT ENTIDAD,NOMBRE FROM u845291486_reina.ENTIDAD";
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($entidad = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$entidad["ENTIDAD"].'">'.$entidad["NOMBRE"]."</option>";
@@ -72,7 +71,7 @@
 				<p>Items Vendidos</p>
 				<select name="Item1">
 				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u845291486_pablo.ITEMS";
+						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($item = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
@@ -87,7 +86,7 @@
 
 				<select name="Item2">
 				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u845291486_pablo.ITEMS";
+						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($item = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
@@ -101,7 +100,7 @@
 				
 				<select name="Item3">
 				<?php 	
-						$query="SELECT ITEM,NOMBRE FROM u845291486_pablo.ITEMS";
+						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($item = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
@@ -116,7 +115,7 @@
 				<p> Cuenta Corriente Destino </p>				
 				<select name="Cta_cte">
 					<?php 	
-						$query="SELECT CTA_CTE,DETALLE FROM u845291486_pablo.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
+						$query="SELECT CTA_CTE,DETALLE FROM u845291486_reina.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($cta_cte = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$cta_cte["CTA_CTE"].'">'.$cta_cte["DETALLE"]."</option>";
