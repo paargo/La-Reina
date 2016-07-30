@@ -20,6 +20,7 @@
 			if ($result==0) {
 			//Falla conexion
 				echo "<b>Error".mysql_errno.": ".mysql_error()."</b>";
+				echo "FALLO DE CONEXION"
 				}{
 			//Conexion correcta
 				session_start();
@@ -32,7 +33,8 @@
 					$res_imprimible=mysqli_fetch_array($result, MYSQLI_ASSOC);
 					echo $res_imprimible["NOMBRE"];*/
 	
-					$sql="SELECT USUARIO FROM u192212072_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
+	/*				$sql="SELECT USUARIO FROM u192212072_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'"; */
+					$sql="SELECT USUARIO FROM u192212072_reina.USUARIOS WHERE NOMBRE='PABLO'"; 
 					$result=mysqli_query($result_coneccion,$sql);
 					$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
 						
