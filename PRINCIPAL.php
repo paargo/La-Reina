@@ -20,7 +20,7 @@
 			if ($result==0) {
 			//Falla conexion
 				echo "<b>Error".mysql_errno.": ".mysql_error()."</b>";
-				echo "FALLO DE CONEXION"
+				echo "FALLO DE CONEXION";
 				}{
 			//Conexion correcta
 				session_start();
