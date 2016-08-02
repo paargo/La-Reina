@@ -25,18 +25,11 @@
 				session_start();
 				$_SESSION['Usuario']=$_POST['Usuario'];
 				$_SESSION['Clave']=$_POST['Clave'];					
-			
 				
-	 /*Pruebas BKP	$sql="SELECT NOMBRE FROM u845291486_reina.USUARIOS WHERE USUARIO=".$_POST[Usuario];
-					$result=mysqli_query($result_coneccion,$sql);
-					$res_imprimible=mysqli_fetch_array($result, MYSQLI_ASSOC);
-					echo $res_imprimible["NOMBRE"];*/
-	
-					$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
-					$result=mysqli_query($result_coneccion,$sql);
-					$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
-						
-					
+				$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
+				$result=mysqli_query($result_coneccion,$sql);
+				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+		/*					
 			//Inicio algoritmo resumen cuentas corrientes
 					$query="SELECT DETALLE,SALDO FROM u845291486_reina.CTAS_CTES WHERE USUARIO=".$usuario["USUARIO"];
 					$resultado=mysqli_query($result_coneccion,$query);
@@ -46,7 +39,8 @@
 					echo $saldo["DETALLE"]." : ".$saldo["SALDO"]."<br><br>";	
 					}
 			//Fin algoritmo resumen cuentas corrientes		
-				}
+*/
+			}
 
 			?>	
 	    	      </td><td></td>
