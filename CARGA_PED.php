@@ -69,9 +69,12 @@
 						while ($item = mysqli_fetch_assoc($resultado)) {
 						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
 						}
+						
+						
 					?>
 				</select>
 				Unidades : <input type="text" name="Unidades1">   
+						   <input type="checkbox" name="Entregado1" value="S">
 				<br>
 				
 
@@ -85,6 +88,7 @@
 					?>
 				</select>	
 				Unidades : <input type="text" name="Unidades2">   
+						   <input type="checkbox" name="Entregado1" value="S">
 				<br>
 				
 				<select name="Item3">
@@ -97,6 +101,7 @@
 					?>
 				</select>
 				Unidades : <input type="text" name="Unidades3">   
+						   <input type="checkbox" name="Entregado1" value="S">
 				
 				<br><br>
 				<input type="submit" value="Ingresar">
