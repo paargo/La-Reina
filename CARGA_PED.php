@@ -77,7 +77,7 @@
 				Entregada: <input type="checkbox" name="Entregado1" value="S">
 				<br>
 				
-
+<?php  /*
 				<select name="Item2">
 				<?php 	
 						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
@@ -102,7 +102,7 @@
 				</select>
 				Unidades : <input type="text" name="Unidades3">   
 				Entregada: <input type="checkbox" name="Entregado1" value="S">
-				
+				*/ ?>
 				<br><br>
 				<input type="submit" value="Ingresar">
 			</form>
