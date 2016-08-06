@@ -68,7 +68,7 @@
 		<form action="CARGA_PED.php" method="post">
 		
 		<input type ="hidden" name = "Usuario" value = <?php echo $_POST['Usuario']; ?>>
-		<input type="submit" value="Cargar otra Venta">
+		<input type="submit" value="Cargar otra Pedido">
 		
 		</form>
 		
