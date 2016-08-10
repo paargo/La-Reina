@@ -53,15 +53,13 @@
 			echo "<br>usuario:".$_POST['Usuario'];
 			echo "<br><br>";
 		
-			echo "prue
-					ba".$pedido.",".$entidad.",".$fecha.",".$item1.",".$cantidad1.",'N')";
 		
-			$estado = '0';
+			$estado = 'N';
 			
 //Insert en VENTAS_CAB 
 			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( ".$pedido.",".$entidad.",".$fecha.",".$item1.",".$cantidad1.",'N')";
+					VALUES( ".$pedido.",".$entidad.",".$fecha.",".$item1.",".$cant1.",".$estado.")";
 			$resultado=mysqli_query($result_coneccion,$query);
 			
 //Fin insercion
