@@ -58,7 +58,7 @@
 //Insert en VENTAS_CAB 
 			
 			$query="INSERT INTO u192212072_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( "$pedido","$entidad","$fecha","$item1","$cantidad1","'N'")";
+					VALUES( ".$pedido.",".$entidad.",".$fecha.",".$item1.",".$cantidad1.",'N')";
 			$resultado=mysqli_query($result_coneccion,$query);
 			
 //Fin insercion
