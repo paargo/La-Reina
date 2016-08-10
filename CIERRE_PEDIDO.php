@@ -53,6 +53,8 @@
 			echo "<br>usuario:".$_POST['Usuario'];
 			echo "<br><br>";
 		
+			echo "prueba".$pedido.",".$entidad.",".$fecha.",".$item1.",".$cantidad1.",'N')";
+		
 			$estado = '0';
 			
 //Insert en VENTAS_CAB 
