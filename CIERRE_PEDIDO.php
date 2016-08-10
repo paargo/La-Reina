@@ -26,11 +26,11 @@
 // Variables a llenar para insert
 		//Muestra PEDIDO
 			$pedido = 1;
-			$query="SELECT MAX(ID_PEDIDO) FROM u192212072_reina.PEDIDOS";
+			/*$query="SELECT MAX(ID_PEDIDO) FROM u192212072_reina.PEDIDOS";
 			$resultado=mysqli_query($result_coneccion,$query);
-			$qry_venta=mysqli_fetch_array($resultado, MYSQLI_ASSOC);	
+			$qry_pedido=mysqli_fetch_array($resultado, MYSQLI_ASSOC);	
 				
-			$pedido = $pedido + $qry_pedido["MAX(ID_PEDIDO)+1"];
+			$pedido = $pedido + $qry_pedido["MAX(ID_PEDIDO)+1"];*/
 			echo "<br>Pedido:".$pedido;
 			
 			$fecha = date("Y-m-d");
