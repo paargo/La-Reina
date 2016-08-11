@@ -64,7 +64,7 @@
 //Fin insercion
 			else {
 					if ($entre1=$cant1) {
-					$estado = 'T';} else {$estado = 'P'}
+					$estado = 'T';} else {$estado = 'P';}
 				$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,FECHA_ESTIM_ENTR,FECHA_ENTREGADO,ITEM,CANTIDAD,CANTIDAD_ENTREG,ESTADO) 
 					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".","."'".$fecha."'".","."'".$fecha."'".",".$item1.",".$cant1.",".$entreg1.","."'".$estado."'".")";
 					}
