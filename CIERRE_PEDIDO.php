@@ -48,18 +48,15 @@
 			$entreg1 = $_POST['Entregado1'];
 			echo "<br>Entregado:".$entreg1;
 			
-			
-			
 			echo "<br>usuario:".$_POST['Usuario'];
 			echo "<br><br>";
-		
 		
 			$estado = 'N';
 			
 //Insert en VENTAS_CAB 
 			
-			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.","."'".$estado."'".")";
+			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ENTREGADO,ESTADO) 
+					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.",".$entreg1.","."'".$estado."'".")";
 					echo $query;
 			$resultado=mysqli_query($result_coneccion,$query);
 			
