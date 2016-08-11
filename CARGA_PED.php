@@ -74,7 +74,7 @@
 					?>
 				</select>
 				Unidades : <input type="text" name="Unidades1">   
-				Entregada: <input type="checkbox" name="Entregado1" value="S">
+				Entregada: <input type="text" name="Entregado1">
 				<br>
 				
 <?php  /*
