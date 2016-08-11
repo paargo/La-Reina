@@ -55,12 +55,21 @@
 			
 //Insert en VENTAS_CAB 
 			
+			if ($entre1<$cant1) {
+			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,CANTIDAD_ENTREG,ESTADO) 
 					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.",".$entreg1.","."'".$estado."'".")";
-					echo $query;
-			$resultado=mysqli_query($result_coneccion,$query);
-			
+
+			}
 //Fin insercion
+			else {
+					if ($entre1=$cant1) {
+					$estado = 'T';} else {$estado = 'P'}
+				$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,FECHA_ESTIM_ENTR,FECHA_ENTREGADO,ITEM,CANTIDAD,CANTIDAD_ENTREG,ESTADO) 
+					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".","."'".$fecha."'".","."'".$fecha."'".",".$item1.",".$cant1.",".$entreg1.","."'".$estado."'".")";
+					}
+			echo $query;
+			$resultado=mysqli_query($result_coneccion,$query);
 				}
 		?>	
 		<form action="CARGA_PED.php" method="post">
