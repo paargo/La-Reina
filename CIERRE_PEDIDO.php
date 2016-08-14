@@ -67,14 +67,14 @@
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
 					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.","."'".$estado."'".")";
 	        $resultado=mysqli_query($result_coneccion,$query);
-			
+/*			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
 					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item2.",".$cant2.","."'".$estado."'".")";
 	        $resultado=mysqli_query($result_coneccion,$query);
 			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
 					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item3.",".$cant3.","."'".$estado."'".")";
-	        $resultado=mysqli_query($result_coneccion,$query);
+	        $resultado=mysqli_query($result_coneccion,$query);*/
 //Fin insercion
 		?>	
 		<form action="CARGA_PED.php" method="post">
