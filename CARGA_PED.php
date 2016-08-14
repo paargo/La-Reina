@@ -74,7 +74,34 @@
 					?>
 				</select>
 				Unidades : <input type="text" name="Unidades1">   
-				Entregada: <input type="text" name="Entregado1">
+				<br>
+				
+				<select name="Item2">
+				<?php 	
+						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
+						$resultado=mysqli_query($result_coneccion,$query);
+						while ($item = mysqli_fetch_assoc($resultado)) {
+						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
+						}
+						
+						
+					?>
+				</select>
+				Unidades : <input type="text" name="Unidades2">   
+				<br>
+				
+				<select name="Item3">
+				<?php 	
+						$query="SELECT ITEM,NOMBRE FROM u845291486_reina.ITEMS";
+						$resultado=mysqli_query($result_coneccion,$query);
+						while ($item = mysqli_fetch_assoc($resultado)) {
+						echo '<option value="'.$item["ITEM"].'">'.$item["NOMBRE"]."</option>";
+						}
+						
+						
+					?>
+				</select>
+				Unidades : <input type="text" name="Unidades3">   
 				<br>
 				
 <?php  /*
