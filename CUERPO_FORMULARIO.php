@@ -41,7 +41,7 @@
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
 					<?php 	
-						$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=$_POST['ID_FORM']";
+						$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM";
 						$resultado=mysqli_query($result_coneccion,$query);
 						while ($form = mysqli_fetch_assoc($resultado)) {
 						echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].">"; 
