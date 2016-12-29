@@ -29,26 +29,27 @@
 				$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
 				$result=mysqli_query($result_coneccion,$sql);
 				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+
 			}
 
 			?>	
-			<?php 	
-				$query="SELECT ID_FORM,NOMBRE FROM u845291486_reina.CABFORM";
-				$resultado=mysqli_query($result_coneccion,$query);
-				$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)
-					?>				
-			
 	    	      </td><td></td>
 	      </tr>
 	      <tr><td></td>
 		  <td>
-			 <p>SELECCIONE FORMULARIO</p>
-			 <form action="CIERRE_PEDIDO.php" method= <?php echo '"'.$form["METHOD"].'"'; ?>>
+			 <form action="CIERRE_PEDIDO.php" method="post">
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
-					<?php echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; ?>
+					<?php 	
+						$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=$_POST[$'ID_FORM']";
+						$resultado=mysqli_query($result_coneccion,$query);
+						while ($form = mysqli_fetch_assoc($resultado)) {
+						echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].">"; 
+						}
+					?>				
 				</select>
 				<br>
+				
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
 				<br><br>
 				<input type="submit" value="Ingresar">
