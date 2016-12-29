@@ -33,7 +33,7 @@
 
 			?>	
 			<?php 	
-				$query="SELECT ID_FORM,NOMBRE FROM u845291486_reina.CABFORM";
+				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM";
 				$resultado=mysqli_query($result_coneccion,$query);
 				$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)
 					?>				
@@ -43,7 +43,7 @@
 	      <tr><td></td>
 		  <td>
 			 <p>SELECCIONE FORMULARIO</p>
-			 <form action="CIERRE_PEDIDO.php" method= <?php echo '"'.$form["METHOD"].'"'; ?>>
+			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
 					<?php echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; ?>
