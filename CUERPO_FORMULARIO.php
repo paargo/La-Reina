@@ -29,9 +29,7 @@
 				$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
 				$result=mysqli_query($result_coneccion,$sql);
 				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
-
 			}
-
 			?>	
 	    	      </td><td></td>
 	      </tr>
@@ -39,7 +37,6 @@
 		  <td>
 			 <form action="CIERRE_PEDIDO.php" method="post">
 				<p> FORMULARIO </p>				
-				<select name="FORMULARIO">
 					<?php 	
 						$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=$_POST['ID_FORM']";
 						$resultado=mysqli_query($result_coneccion,$query);
@@ -47,7 +44,6 @@
 						echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].">"; 
 						}
 					?>				
-				</select>
 				<br>
 				
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
