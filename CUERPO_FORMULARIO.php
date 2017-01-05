@@ -45,7 +45,7 @@
 							while ($form = mysqli_fetch_assoc($resultado)) {
 								echo $form["NOMBRE_CAMPO"].': ';
 								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'">'; 
-								echo '<br><br>'
+								echo '<br><br>';
 							}
 						?>		
 					</p>	
