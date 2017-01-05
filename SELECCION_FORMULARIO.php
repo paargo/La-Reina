@@ -30,14 +30,12 @@
 				$result=mysqli_query($result_coneccion,$sql);
 				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
 			}
-
 			?>	
 			<?php 	
 				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM";
 				$resultado=mysqli_query($result_coneccion,$query);
 				$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)
-					?>				
-			
+			?>				
 	    	      </td><td></td>
 	      </tr>
 	      <tr><td></td>
