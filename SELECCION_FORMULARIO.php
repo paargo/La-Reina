@@ -47,6 +47,7 @@
 					<?php echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; ?>
 				</select>
 				<br>
+				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
 				<br><br>
 				<input type="submit" value="Ingresar">
