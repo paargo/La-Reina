@@ -36,16 +36,19 @@
 		<tr><td></td>
 			<td>
 				<form action="CIERRE_PEDIDO.php" method="post">
-					<p> FORMULARIO </p>				
+					<p> FORMULARIO 			
 						<?php 	
-							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=1";
+							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['ID_FORM'];
 							/*$_POST['ID_FORM']*/
 							$resultado=mysqli_query($result_coneccion,$query);
+							echo $_POST['NOMBRE'].'<br><br>';
 							while ($form = mysqli_fetch_assoc($resultado)) {
 								echo $form["NOMBRE_CAMPO"].': ';
 								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'">'; 
+								echo '<br><br>'
 							}
-						?>				
+						?>		
+					</p>	
 					<br>
 					<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
 					<br><br>
