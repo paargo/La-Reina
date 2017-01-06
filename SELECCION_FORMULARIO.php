@@ -45,11 +45,20 @@
 			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
-					<?php /*while (*/$form = mysqli_fetch_assoc($resultado);/*) {*/
+					<?php while ($form = mysqli_fetch_assoc($resultado)) {
 							echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; 	
-							/*}				*/
+							}				
 					?>
 				</select>
+				<br>
+				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
+				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
+				<br><br>
+				<input type="submit" value="Ingresar">
+			</form>
+			
+			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
+				<p> FORMULARIO </p>				
 				<br>
 				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
