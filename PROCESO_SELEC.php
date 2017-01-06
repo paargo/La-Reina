@@ -38,6 +38,7 @@
 			 <form action=<?php echo '"'.$_POST["ACCION"].'"'; ?> method= <?php echo '"'.$_POST["METHOD"].'"'; ?>>
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
 			</form>
+			<meta http-equiv="Refresh" content="0;url=<?php echo '"'.$_POST["ACCION"].'"'; ?>">
 		  </td>
 		  <td></td></tr>
 	     </table>

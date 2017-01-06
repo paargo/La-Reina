@@ -42,7 +42,7 @@
 	      <tr><td></td>
 		  <td>
 			 <p>SELECCIONE FORMULARIO</p>
-			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
+<form action="PROCESO_SELEC.php" method="post">
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
 					<?php while ($form = mysqli_fetch_assoc($resultado)) {
@@ -57,16 +57,6 @@
 				<input type="submit" value="Ingresar">
 			</form>
 			
-			 <form action="PROCESO_SELEC.php" method="post"
-			 
-			 <?php /*echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"';*/ ?>
-				<p> FORMULARIO </p>				
-				<br>
-				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
-				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
-				<br><br>
-				<input type="submit" value="Ingresar">
-			</form>
 		  </td>
 		  <td></td></tr>
 	     </table>
