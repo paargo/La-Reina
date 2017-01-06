@@ -34,7 +34,8 @@
 			<?php 	
 				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM";
 				$resultado=mysqli_query($result_coneccion,$query);
-				$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)
+				/*$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)*/
+
 			?>				
 	    	      </td><td></td>
 	      </tr>
@@ -44,7 +45,10 @@
 			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
-					<?php echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; ?>
+					<?php while ($form = mysqli_fetch_assoc($resultado)) {
+							echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; 	
+							}				
+					?>
 				</select>
 				<br>
 				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
