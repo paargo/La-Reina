@@ -45,7 +45,7 @@
 			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
 				<p> FORMULARIO </p>				
 				<select name="FORMULARIO">
-					<?php /*while (*/$form = mysqli_fetch_assoc($resultado)/*) {*/
+					<?php /*while (*/$form = mysqli_fetch_assoc($resultado);/*) {*/
 							echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; 	
 							/*}				*/
 					?>
