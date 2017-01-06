@@ -57,7 +57,9 @@
 				<input type="submit" value="Ingresar">
 			</form>
 			
-			 <form action=<?php echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"'; ?>>
+			 <form action="PROCESO_SELEC.php" method="post"
+			 
+			 <?php /*echo '"'.$form["ACCION"].'"'; ?> method= <?php echo '"'.$form["METHOD"].'"';*/ ?>
 				<p> FORMULARIO </p>				
 				<br>
 				<input type ="hidden" name = "Usuario" value = <?php echo $form['NOMBRE']; ?>> 
