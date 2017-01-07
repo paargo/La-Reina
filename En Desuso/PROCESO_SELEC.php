@@ -31,29 +31,14 @@
 				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
 			}
 			?>	
-			<?php 	
-				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM";
-				$resultado=mysqli_query($result_coneccion,$query);
-				/*$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)*/
-			?>				
-	    	      </td><td></td>
+	      </td><td></td>
 	      </tr>
 	      <tr><td></td>
 		  <td>
-			 <p>SELECCIONE FORMULARIO</p>
-			  <form action="CUERPO_FORMULARIO.php" method="post">
-				<p> FORMULARIO </p>				
-				<select name="FORMULARIO">
-					<?php while ($form = mysqli_fetch_assoc($resultado)) {
-							echo '<option value="'.$form["ID_FORM"].'">'.$form["NOMBRE"]."</option>"; 	
-							}				
-					?>
-				</select>
+			 <form action=<?php echo '"'.$_POST["ACCION"].'"'; ?> method= <?php echo '"'.$_POST["METHOD"].'"'; ?>>
 				<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
-				<br><br>
-				<input type="submit" value="Ingresar">
 			</form>
-			
+			<meta http-equiv="Refresh" content="0;url=<?php echo '"'.$_POST["ACCION"].'"'; ?>">
 		  </td>
 		  <td></td></tr>
 	     </table>

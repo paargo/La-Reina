@@ -35,6 +35,12 @@
 		</tr>
 		<tr><td></td>
 			<td>
+				<?php 	
+					$query_cab="SELECT NOMBRE,ACCION FROM u845291486_reina.RENFORM WHERE ID_FORM=1";/*.$_POST['ID_FORM'];*/
+					$resultado_cab=mysqli_query($result_coneccion,$query_cab);
+					$form_cab = mysqli_fetch_array($resultado_cab, MYSQLI_ASSOC);	
+				?>		
+			
 				<form action="CIERRE_PEDIDO.php" method="post">
 					<p> FORMULARIO </p> 			
 					<p align="right">
