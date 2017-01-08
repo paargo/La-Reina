@@ -42,7 +42,7 @@
 				?>		
 			
 				<form action="CIERRE_PEDIDO.php" method="post">
-					<p> FORMULARIO </p> 			
+					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
 						<?php 	
 							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=1";/*.$_POST['ID_FORM'];*/
