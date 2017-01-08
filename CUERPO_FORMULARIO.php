@@ -36,7 +36,7 @@
 		<tr><td></td>
 			<td>
 				<?php 	
-					echo $_POST['ID_FORM'];
+					echo $_POST['FORMULARIO'];
 					$query_cab="SELECT NOMBRE,ACCION FROM u845291486_reina.CABFORM WHERE ID_FORM=1";
 					$resultado_cab=mysqli_query($result_coneccion,$query_cab);
 					$form_cab = mysqli_fetch_array($resultado_cab, MYSQLI_ASSOC);	
