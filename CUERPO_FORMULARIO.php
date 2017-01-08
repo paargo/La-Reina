@@ -36,12 +36,12 @@
 		<tr><td></td>
 			<td>
 				<?php 	
-					$query_cab="SELECT NOMBRE,ACCION FROM u845291486_reina.CABFORM WHERE ID_FORM=".$_POST['FORMULARIO'];
+					$query_cab="SELECT NOMBRE,ACCION,METHOD FROM u845291486_reina.CABFORM WHERE ID_FORM=".$_POST['FORMULARIO'];
 					$resultado_cab=mysqli_query($result_coneccion,$query_cab);
 					$form_cab = mysqli_fetch_array($resultado_cab, MYSQLI_ASSOC);	
 				?>		
-			<?php echo 'action='.'"'.$form_cab["accion"].'"'.'method='.'"'.$form_cab["accion"].'"'?>
-				<form <?php echo 'action='.'"'.$form_cab["accion"].'"'.'method='.'"'.$form_cab["accion"].'"'?>> 
+			<?php echo 'action='.'"'.$form_cab["ACCION"].'" '.'method='.'"'.$form_cab["METHOD"].'"'?>
+				<form <?php echo 'action='.'"'.$form_cab["ACCION"].'" '.'method='.'"'.$form_cab["METHOD"].'"'?>> 
 					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
 						<?php 	
