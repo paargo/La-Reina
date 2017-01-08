@@ -40,7 +40,6 @@
 					$resultado_cab=mysqli_query($result_coneccion,$query_cab);
 					$form_cab = mysqli_fetch_array($resultado_cab, MYSQLI_ASSOC);	
 				?>		
-			<?php echo 'action='.'"'.$form_cab["ACCION"].'" '.'method='.'"'.$form_cab["METHOD"].'"'?>
 				<form <?php echo 'action='.'"'.$form_cab["ACCION"].'" '.'method='.'"'.$form_cab["METHOD"].'"'?>> 
 					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
@@ -60,6 +59,7 @@
 					<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
 					<br><br>
 					<input type="submit" value="Ingresar">
+					<input type="reset" value="Cancelar">
 				</form>
 			</td>
 			<td></td>
