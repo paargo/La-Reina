@@ -41,7 +41,7 @@
 					$form_cab = mysqli_fetch_array($resultado_cab, MYSQLI_ASSOC);	
 				?>		
 			
-				<form <?php echo "action="."'".$form_cab["accion"]."'"."method="."'".$form_cab["accion"]."'".">"?> 
+				<form <?php echo 'action='.'"'.$form_cab["accion"].'"'.'method='.'"'.$form_cab["accion"].'"'.'>'?> 
 					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
 						<?php 	
