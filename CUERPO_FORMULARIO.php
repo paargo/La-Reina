@@ -44,12 +44,14 @@
 					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
 						<?php 	
-							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
+							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO,REQUERIDO FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
 							$resultado=mysqli_query($result_coneccion,$query);
 							/*echo $_POST['NOMBRE'].'<br><br>';*/
 							while ($form = mysqli_fetch_assoc($resultado)) {
+								$requerido='';
+								if ($form["REQUERIDO"] = 'V') {$requerida = 'required'};
 								echo $form["NOMBRE_CAMPO"].': ';
-								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'">'; 
+								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].$requerida.'">'; 
 								echo '<br><br>';
 								echo $_POST['ID_FORM'];
 							}
