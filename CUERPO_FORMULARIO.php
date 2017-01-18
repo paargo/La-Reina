@@ -51,7 +51,7 @@
 								$requerido='';
 								if ($form["REQUERIDO"] = 'V') {$requerida = 'required';};
 								echo $form["NOMBRE_CAMPO"].': ';
-								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].$requerida.'">'; 
+								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
 								echo '<br><br>';
 								echo $_POST['ID_FORM'];
 							}
