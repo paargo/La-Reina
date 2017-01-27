@@ -44,16 +44,50 @@
 					<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 					<p align="right">
 						<?php 	
-							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO,REQUERIDO FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
+							$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO,REQUERIDO,ID_LOV FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
 							$resultado=mysqli_query($result_coneccion,$query);
-							/*echo $_POST['NOMBRE'].'<br><br>';*/
 							while ($form = mysqli_fetch_assoc($resultado)) {
 								$requerido='';
 								if ($form["REQUERIDO"] = 'V') {$requerida = 'required';};
 								echo $form["NOMBRE_CAMPO"].': ';
-								echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
+								if ($form["TIPO"] = 'SELECT') {
+									$qry_fin = "SELECT ";
+									echo '<select name="'.echo $form["NOMBRE_CAMPO"].'">';
+									
+								/*Arma query de seleccion*/
+									
+									/*Obtiene campos a seleccionar*/
+									$qry_camp = "SELECT CAMPO FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
+									$res_campos = mysqli_fetch_assoc($qry_campos);
+											/*Ver en no data found*/
+									$qry_fin = $qry_fin.$res_campos;
+									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
+										$qry_fin = $qry_fin.",";										
+										$qry_fin = $qry_fin.$res_campos;
+									};
+									/*Fin Obtiene campos a seleccionar*/									
+									$qry_fin = $qry_fin." FROM ";
+									
+									
+									$qry_fin = $qry_fin." WHERE ";
+				
+				
+									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
+									while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
+									
+									/*	$valor = ;
+										$desc = ;*/
+										echo '<option value="'.$valor.'">'.$desc."</option>"; 	
+									
+									echo '</select>';
+								} 
+								else {
+									echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
+								};
 								echo '<br><br>';
 								echo $_POST['ID_FORM'];
+								
 							}
 						?>		
 					</p>	
