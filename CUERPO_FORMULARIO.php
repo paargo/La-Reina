@@ -52,7 +52,7 @@
 								echo $form["NOMBRE_CAMPO"].': ';
 								if ($form["TIPO"] = 'SELECT') {
 									$qry_fin = "SELECT ";
-									echo '<select name="'.echo $form["NOMBRE_CAMPO"].'">';
+									echo '<select name="'.$form["NOMBRE_CAMPO"].'">';
 									
 								/*Arma query de seleccion*/
 									
