@@ -81,7 +81,7 @@
 										echo '<option value="'.$valor.'">'.$desc."</option>"; 	
 									
 									echo '</select>';
-								} 
+								} ;
 								else {
 									echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
 								};
