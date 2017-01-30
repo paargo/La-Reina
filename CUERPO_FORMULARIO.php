@@ -79,7 +79,7 @@
 									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
 										$qry_fin = $qry_fin.", ";										
 										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
-										);
+									};
 									/*Fin obtiene tablas de los campos a seleccionar*/
 									
 									$qry_fin = $qry_fin." WHERE ";
