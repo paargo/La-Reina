@@ -1,4 +1,4 @@
- <html lang="esp">
+<html lang="esp">
  <head>
 	 <title>SELECCION DE FORMULARIO</title>
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -61,14 +61,26 @@
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos;
+									$qry_fin = $qry_fin.$res_campos["CAMPO"];
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
-										$qry_fin = $qry_fin.",";										
-										$qry_fin = $qry_fin.$res_campos;
+										$qry_fin = $qry_fin.", ";										
+										$qry_fin = $qry_fin.$res_campos["CAMPO"];
 									};
 									/*Fin Obtiene campos a seleccionar*/									
+									
+									/*Obtiene tablas de los campos a seleccionar*/
 									$qry_fin = $qry_fin." FROM ";
 									
+									$qry_tabla_lov = "SELECT B.OWNER, B.NOMBRE, A.ID_TABLA FROM LOV_TABLAS A, TABLAS_QRY B WHERE A.ID_TABLA = B.ID_TABLA A.ID_LOV =".$form["ID_LOV"];
+									$qry_tablas=mysqli_query($result_coneccion,$qry_tabla_lov);
+									$res_tablas = mysqli_fetch_assoc($qry_tablas);
+											/*Ver en no data found*/
+									$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
+									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
+										$qry_fin = $qry_fin.", ";										
+										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
+										);
+									/*Fin obtiene tablas de los campos a seleccionar*/
 									
 									$qry_fin = $qry_fin." WHERE ";
 				
