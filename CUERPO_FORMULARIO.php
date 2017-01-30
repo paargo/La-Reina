@@ -49,6 +49,7 @@
 							while ($form = mysqli_fetch_assoc($resultado)) {
 								$requerido='';
 								if ($form["REQUERIDO"] = 'V') {$requerida = 'required';};
+								echo "<br><br>".$form["TIPO"]."<br>";
 								echo $form["NOMBRE_CAMPO"].': ';
 								if ($form["TIPO"] = 'SELECT') {
 									echo 'ENTRA AL SELECT';
