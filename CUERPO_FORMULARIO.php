@@ -71,21 +71,18 @@
 									/*Obtiene tablas de los campos a seleccionar*/
 									$qry_fin = $qry_fin." FROM ";
 									
-									$qry_tabla_lov = "SELECT A.ID_TABLA FROM LOV_TABLAS A WHERE A.ID_LOV =1";
+									$qry_tabla_lov = "SELECT B.OWNER, B.NOMBRE, A.ID_TABLA FROM LOV_TABLAS A, TABLAS_QRY B WHERE A.ID_TABLA = B.ID_TABLA AND A.ID_LOV =1";
 									$qry_tablas=mysqli_query($result_coneccion,$qry_tabla_lov);
 									$res_tablas = mysqli_fetch_assoc($qry_tablas);
 									echo "<br><br>".$qry_tabla_lov."<br><br>";
-									if (!$res_tablas) {
-								echo 'MySQL Error: ' . mysqli_error();
-									exit;
-									}
+
 											/*Ver en no data found*/
 									$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
 									echo "<br><br><br>".$qry_fin."<br><br><br>";
-									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
+									/*while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
 										$qry_fin = $qry_fin.", ";										
 										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
-									};
+									};*/
 									/*Fin obtiene tablas de los campos a seleccionar*/
 									
 									$qry_fin = $qry_fin." WHERE ";
