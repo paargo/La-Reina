@@ -78,7 +78,6 @@
 											/*Ver en no data found*/
 									$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
 
-									/*echo "<br><br><br>".$qry_fin."<br><br><br>";*/
 									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
 										$qry_fin = $qry_fin.", ";										
 										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
@@ -87,6 +86,19 @@
 									
 									$qry_fin = $qry_fin." WHERE ";
 									
+									/*Obtiene clausulas a seleccionar*/
+									$qry_fin = $qry_fin." WHERE ";
+									
+									$qry_camp = "SELECT ID_TABLA_1,CAMPO_1,OPERADOR,ID_TABLA_2,CAMPO_2,VALOR_FIJO_INT,VALOR_FIJO_CHAR,VALOR_FIJO_DATE FROM u845291486_reina.LOV_CLAUSULAS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
+									$res_campos = mysqli_fetch_assoc($qry_campos);
+											/*Ver en no data found*/
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA_1"].$res_campos["CAMPO_1"].$res_campos["OPERADOR"].$res_campos["ID_TABLA_2"].$res_campos["CAMPO_2"].$res_campos["VALOR_FIJO_INT"].$res_campos["VALOR_FIJO_CHAR"].$res_campos["VALOR_FIJO_DATE"];
+									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
+										$qry_fin = $qry_fin." AND ";										
+										$qry_fin = $qry_fin.$res_campos["ID_TABLA_1"].$res_campos["CAMPO_1"].$res_campos["OPERADOR"].$res_campos["ID_TABLA_2"].$res_campos["CAMPO_2"].$res_campos["VALOR_FIJO_INT"].$res_campos["VALOR_FIJO_CHAR"].$res_campos["VALOR_FIJO_DATE"];
+									};
+									/*Fin Obtiene clausulas a seleccionar*/				
 
 				
 									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
