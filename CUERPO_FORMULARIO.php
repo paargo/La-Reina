@@ -75,7 +75,7 @@
 									$qry_tablas=mysqli_query($result_coneccion,$qry_tabla_lov);
 									$res_tablas = mysqli_fetch_assoc($qry_tablas);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
+									$qry_fin = $qry_fin.$res_tablas["OWNER"];
 									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
 										$qry_fin = $qry_fin.", ";										
 										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
