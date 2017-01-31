@@ -83,7 +83,8 @@
 									/*Fin obtiene tablas de los campos a seleccionar*/
 									
 									$qry_fin = $qry_fin." WHERE ";
-				
+									
+
 				
 									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
 									while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
@@ -102,6 +103,7 @@
 								echo $_POST['ID_FORM'];
 								
 							}
+																echo "<br><br><br>".$qry_fin."<br><br><br>";
 						?>		
 					</p>	
 					<br>
@@ -109,6 +111,7 @@
 					<br><br>
 					<input type="submit" value="Ingresar">
 					<input type="reset" value="Cancelar">
+					
 				</form>
 			</td>
 			<td></td>
