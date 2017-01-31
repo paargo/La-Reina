@@ -102,8 +102,8 @@
 									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
 									while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
 									
-									/*	$valor = ;
-										$desc = ;*/
+										$valor = $qry_res_fin["1"];
+										$desc = $qry_res_fin["DETALLE"];
 										echo '<option value="'.$valor.'">'.$desc."</option>"; 	
 									
 									echo '</select>';
