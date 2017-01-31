@@ -71,7 +71,7 @@
 									/*Obtiene tablas de los campos a seleccionar*/
 									$qry_fin = $qry_fin." FROM ";
 									
-									$qry_tabla_lov = "SELECT B.OWNER, B.NOMBRE, A.ID_TABLA FROM LOV_TABLAS A, TABLAS_QRY B WHERE A.ID_TABLA = B.ID_TABLA A.ID_LOV =".$form["ID_LOV"];
+									$qry_tabla_lov = "SELECT B.OWNER, B.NOMBRE, A.ID_TABLA FROM LOV_TABLAS A, TABLAS_QRY B WHERE A.ID_TABLA = B.ID_TABLA AND A.ID_LOV =".$form["ID_LOV"];
 									$qry_tablas=mysqli_query($result_coneccion,$qry_tabla_lov);
 									$res_tablas = mysqli_fetch_assoc($qry_tablas);
 											/*Ver en no data found*/
