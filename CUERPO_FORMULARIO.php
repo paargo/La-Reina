@@ -57,11 +57,11 @@
 								/*Arma query de seleccion*/
 									
 									/*Obtiene campos a seleccionar*/
-									$qry_camp = "SELECT CAMPO FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_camp = "SELECT ID_TABLA,CAMPO FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos["CAMPO"];
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"];
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
 										$qry_fin = $qry_fin.", ";										
 										$qry_fin = $qry_fin.$res_campos["CAMPO"];
@@ -76,15 +76,13 @@
 									$res_tablas = mysqli_fetch_assoc($qry_tablas);
 
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
+									$qry_fin = $qry_fin.$res_tablas["OWNER"].$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
 
 									while ($res_campos = mysqli_fetch_assoc($qry_tablas)){
 										$qry_fin = $qry_fin.", ";										
-										$qry_fin = $qry_fin.$res_tablas["OWNER"].".".$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
+										$qry_fin = $qry_fin.$res_tablas["OWNER"].$res_tablas["NOMBRE"]." ".$res_tablas["ID_TABLA"];
 									};
 									/*Fin obtiene tablas de los campos a seleccionar*/
-									
-									$qry_fin = $qry_fin." WHERE ";
 									
 									/*Obtiene clausulas a seleccionar*/
 									$qry_fin = $qry_fin." WHERE ";
