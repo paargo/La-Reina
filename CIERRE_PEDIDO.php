@@ -22,6 +22,19 @@
 			//Falla conexion
 				echo "<b>Error".mysql_errno.": ".mysql_error()."</b>";
 				}{
+				//Conexion correcta
+				session_start();
+				$_SESSION['Usuario']=$_POST['Usuario'];
+				$_SESSION['Clave']=$_POST['Clave'];					
+				
+				$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
+				$result=mysqli_query($result_coneccion,$sql);
+				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+				}
+
+			?>	
+			
+			<?php
 			//Conexion correcta
 // Variables a llenar para insert
 		//Muestra PEDIDO
@@ -39,23 +52,11 @@
 			$entidad = $_POST['Entidad'];
 			echo "<br>entidad:".$entidad;
 			
-			$item1 = $_POST['Item1'];
-			echo "<br>Item 1:".$item1;
+			$item = $_POST['Item'];
+			echo "<br>Item 1:".$item;
 			
-			$cant1 = $_POST['Unidades1'];
-			echo "<br>Cantidad 1:".$cant1;
-			
-			$item1 = $_POST['Item2'];
-			echo "<br>Item 1:".$item1;
-			
-			$cant1 = $_POST['Unidades2'];
-			echo "<br>Cantidad 2:".$cant1;
-			
-			$item1 = $_POST['Item3'];
-			echo "<br>Item 3:".$item3;
-			
-			$cant1 = $_POST['Unidades3'];
-			echo "<br>Cantidad 3:".$cant3;			
+			$cant = $_POST['Unidades'];
+			echo "<br>Cantidad:".$cant1;
 			
 			echo "<br>usuario:".$_POST['Usuario'];
 			echo "<br><br>";
