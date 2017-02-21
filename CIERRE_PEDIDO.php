@@ -20,7 +20,51 @@
 			$result=mysqli_query($result_coneccion,$sql);
 
 			?>	
-
+			
+			<?php
+			//Conexion correcta
+// Variables a llenar para insert
+		//Muestra PEDIDO
+			$pedido = 1;
+			$query="SELECT MAX(ID_PEDIDO) as maxped FROM u845291486_reina.PEDIDOS";
+			$resultado=mysqli_query($result_coneccion,$query);
+			$qry_pedido=mysqli_fetch_array($resultado, MYSQLI_ASSOC);	
+				
+			$pedido = $pedido + $qry_pedido["maxped"];
+			echo "<br>Pedido:".$pedido;
+			
+			$fecha = date("Y-m-d");
+			echo "<br>fecha:".$fecha;
+			
+			$entidad = $_POST['Entidad'];
+			echo "<br>entidad:".$entidad;
+			
+			$item = $_POST['Item'];
+			echo "<br>Item 1:".$item;
+			
+			$cant = $_POST['Unidades'];
+			echo "<br>Cantidad:".$cant1;
+			
+			echo "<br>usuario:".$_POST['Usuario'];
+			echo "<br><br>";
+		
+			$estado = 'N';
+			
+//Insert en VENTAS_CAB 
+			
+			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
+					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.","."'".$estado."'".")";
+	        //$resultado=mysqli_query($result_coneccion,$query);
+/*			
+			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
+					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item2.",".$cant2.","."'".$estado."'".")";
+	        $resultado=mysqli_query($result_coneccion,$query);
+			
+			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
+					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item3.",".$cant3.","."'".$estado."'".")";
+	        $resultado=mysqli_query($result_coneccion,$query);*/
+//Fin insercion
+		?>	
 		<form action="CARGA_PED.php" method="post">
 		
 		<input type ="hidden" name = "Usuario" value = <?php echo $_POST['Usuario']; ?> >
