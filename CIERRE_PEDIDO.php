@@ -36,14 +36,14 @@
 			$fecha = date("Y-m-d");
 			echo "<br>fecha:".$fecha;
 			
-			$entidad = $_POST['Entidad'];
-			echo "<br>entidad:".$entidad;
+			$cliente = $_POST['CLIENTE'];
+			echo "<br>CLIENTE:".$cliente;
 			
-			$item = $_POST['Item'];
-			echo "<br>Item 1:".$item;
+			$item = $_POST['ITEM'];
+			echo "<br>Item:".$item;
 			
-			$cant = $_POST['Unidades'];
-			echo "<br>Cantidad:".$cant1;
+			$cant = $_POST['CANTIDAD'];
+			echo "<br>Cantidad:".$cant;
 			
 			echo "<br>usuario:".$_POST['Usuario'];
 			echo "<br><br>";
@@ -53,16 +53,9 @@
 //Insert en VENTAS_CAB 
 			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item1.",".$cant1.","."'".$estado."'".")";
+					VALUES( ".$pedido.",".$cliente.","."'".$fecha."'".",".$item.",".$cant.","."'".$estado."'".")";
 	        //$resultado=mysqli_query($result_coneccion,$query);
-/*			
-			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item2.",".$cant2.","."'".$estado."'".")";
-	        $resultado=mysqli_query($result_coneccion,$query);
-			
-			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
-					VALUES( ".$pedido.",".$entidad.","."'".$fecha."'".",".$item3.",".$cant3.","."'".$estado."'".")";
-	        $resultado=mysqli_query($result_coneccion,$query);*/
+
 //Fin insercion
 		?>	
 		<form action="CARGA_PED.php" method="post">
