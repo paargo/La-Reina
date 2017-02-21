@@ -9,17 +9,28 @@
   	 <tr><td></td><td></td><td></td></tr>
   	 <tr>
   	   <td></td><td>
-	    <?php
-		 //Conexion
-			$host="mysql.hostinger.com.ar";
-			$user="u845291486_pablo";
-			$password="895895";
-			
-			$result_coneccion=mysqli_connect($host,$user,$password);
-			$sql="show status";
-			$result=mysqli_query($result_coneccion,$sql);
-
-			?>	
+	    <?php //Conexion
+					$host="mysql.hostinger.com.ar";
+					$user="u845291486_pablo";
+					$password="895895";
+					
+					$result_coneccion=mysqli_connect($host,$user,$password);
+					$sql="show status";
+					$result=mysqli_query($result_coneccion,$sql);
+					if ($result==0) {
+					//Falla conexion
+						echo "<b>Error".mysql_errno.": ".mysql_error()."</b>";
+						}{
+					//Conexion correcta
+						session_start();
+						$_SESSION['Usuario']=$_POST['Usuario'];
+						$_SESSION['Clave']=$_POST['Clave'];					
+						
+						$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
+						$result=mysqli_query($result_coneccion,$sql);
+						$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+					}
+				?>	
 			
 			<?php
 			//Conexion correcta
@@ -54,14 +65,14 @@
 			
 			$query="INSERT INTO u845291486_reina.PEDIDOS (ID_PEDIDO,ENTIDAD,FECHA_PED,ITEM,CANTIDAD,ESTADO) 
 					VALUES( ".$pedido.",".$cliente.","."'".$fecha."'".",".$item.",".$cant.","."'".$estado."'".")";
-	        //$resultado=mysqli_query($result_coneccion,$query);
+	        $resultado=mysqli_query($result_coneccion,$query);
 
 //Fin insercion
 		?>	
-		<form action="CARGA_PED.php" method="post">
+		<form action="SELECCION_FORMULARIO.php" method="post">
 		
 		<input type ="hidden" name = "Usuario" value = <?php echo $_POST['Usuario']; ?> >
-		<input type="submit" value="Cargar otra Pedido">
+		<input type="submit" value="Volver a la seleccion de Formulario">
 		
 		</form>
 		
