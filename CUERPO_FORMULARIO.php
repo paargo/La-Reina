@@ -105,9 +105,8 @@
 										$valor = $seleccion["1"];
 										$desc = $seleccion["DETALLE"];
 										echo '<option value="'.$valor.'">'.$desc."</option>"; 	
-									
-									echo '</select>';
 									};
+									echo '</select>';
 								}	
 								else {
 									echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
