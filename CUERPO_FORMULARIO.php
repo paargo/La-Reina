@@ -65,7 +65,7 @@
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
 										$qry_fin = $qry_fin.", ";										
 									//	$qry_fin = $qry_fin.$res_campos["CAMPO"];
-										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["NOMENCLATURA"];
+										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]." AS ".$res_campos["NOMENCLATURA"];
 									};
 									/*Fin Obtiene campos a seleccionar*/									
 									
