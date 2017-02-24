@@ -57,15 +57,15 @@
 								/*Arma query de seleccion*/
 									
 									/*Obtiene campos a seleccionar*/
-									$qry_camp = "SELECT ID_TABLA,CAMPO,AS FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_camp = "SELECT ID_TABLA,CAMPO,NOMENCLATURA FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["AS"];
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["NOMENCLATURA"];
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
 										$qry_fin = $qry_fin.", ";										
 									//	$qry_fin = $qry_fin.$res_campos["CAMPO"];
-										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["AS"];
+										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["NOMENCLATURA"];
 									};
 									/*Fin Obtiene campos a seleccionar*/									
 									
