@@ -57,14 +57,15 @@
 								/*Arma query de seleccion*/
 									
 									/*Obtiene campos a seleccionar*/
-									$qry_camp = "SELECT ID_TABLA,CAMPO FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_camp = "SELECT ID_TABLA,CAMPO,AS FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"];
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["AS"];
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
 										$qry_fin = $qry_fin.", ";										
-										$qry_fin = $qry_fin.$res_campos["CAMPO"];
+									//	$qry_fin = $qry_fin.$res_campos["CAMPO"];
+										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]."AS".$res_campos["AS"];
 									};
 									/*Fin Obtiene campos a seleccionar*/									
 									
@@ -102,7 +103,7 @@
 									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
 									while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
 																		
-										$valor = $seleccion["1"];
+										$valor = $seleccion["COD"];
 										$desc = $seleccion["DETALLE"];
 										echo '<option value="'.$valor.'">'.$desc."</option>"; 	
 									};
@@ -115,7 +116,6 @@
 								echo $_POST['ID_FORM'];
 								
 							}
-																echo "<br><br><br>".$qry_fin."<br><br><br>";
 						?>		
 					</p>	
 					<br>
