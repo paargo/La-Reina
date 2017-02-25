@@ -61,16 +61,18 @@
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]." AS ".$res_campos["NOMENCLATURA"];
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]." AS ".$res_campos["NOMENCLATURA"].", "."CONCAT(";
+									$res_campos = mysqli_fetch_assoc($qry_campos); //FALTA VALIDAR CANTIDAD DE REGISTROS
+									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
-										$qry_fin = $qry_fin.", ";										
 									//	$qry_fin = $qry_fin.$res_campos["CAMPO"];
-										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]." AS ".$res_campos["NOMENCLATURA"];
+										$qry_fin = $qry_fin.", ";										
+										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
 									};
 									/*Fin Obtiene campos a seleccionar*/									
 									
 									/*Obtiene tablas de los campos a seleccionar*/
-									$qry_fin = $qry_fin." FROM ";
+									$qry_fin = $qry_fin.") AS DETALLE FROM ";
 									
 									$qry_tabla_lov = "SELECT B.OWNER, B.NOMBRE, A.ID_TABLA, B.ID_PARA_TABLA FROM u845291486_reina.LOV_TABLAS A, u845291486_reina.TABLAS_QRY B WHERE A.ID_TABLA = B.ID_TABLA AND A.ID_LOV =".$form["ID_LOV"];
 									$qry_tablas=mysqli_query($result_coneccion,$qry_tabla_lov);
