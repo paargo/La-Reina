@@ -57,7 +57,7 @@
 								/*Arma query de seleccion*/
 									
 									/*Obtiene campos a seleccionar*/
-									$qry_camp = "SELECT ID_TABLA,CAMPO,NOMENCLATURA FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"];
+									$qry_camp = "SELECT ID_TABLA,CAMPO,NOMENCLATURA FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"]." ORDER BY ORDEN ASC";
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
