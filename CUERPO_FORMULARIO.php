@@ -63,11 +63,12 @@
 											/*Ver en no data found*/
 									$qry_fin = $qry_fin.$res_campos["OPERACION"]."(".$res_campos["ID_TABLA"].$res_campos["CAMPO"]." ".$res_campos["OPERANDO"]." ".$res_campos["ID_TABLA_2"].$res_campos["CAMPO2"].") AS ".$res_campos["NOMENCLATURA"].", "."CONCAT(";
 									$res_campos = mysqli_fetch_assoc($qry_campos); //FALTA VALIDAR CANTIDAD DE REGISTROS
-									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
+									//$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
+									$qry_fin = $qry_fin.$res_campos["OPERACION"]."(".$res_campos["ID_TABLA"].$res_campos["CAMPO"]." ".$res_campos["OPERANDO"]." ".$res_campos["ID_TABLA_2"].$res_campos["CAMPO2"].") ";
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
-									//	$qry_fin = $qry_fin.$res_campos["CAMPO"];
 										$qry_fin = $qry_fin.","."' - ',";										
-										$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
+										$qry_fin = $qry_fin.$res_campos["OPERACION"]."(".$res_campos["ID_TABLA"].$res_campos["CAMPO"]." ".$res_campos["OPERANDO"]." ".$res_campos["ID_TABLA_2"].$res_campos["CAMPO2"].") ";
+										//$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
 									};
 									/*Fin Obtiene campos a seleccionar*/									
 									
