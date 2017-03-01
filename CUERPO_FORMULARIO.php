@@ -57,11 +57,11 @@
 								/*Arma query de seleccion*/
 									
 									/*Obtiene campos a seleccionar*/
-									$qry_camp = "SELECT ID_TABLA,CAMPO,NOMENCLATURA FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"]." ORDER BY ORDEN ASC";
+									$qry_camp = "SELECT OPERACION,ID_TABLA,CAMPO,OPERANDO,ID_TABLA_2,CAMPO2,NOMENCLATURA FROM u845291486_reina.LOV_CAMPOS WHERE ID_LOV =".$form["ID_LOV"]." ORDER BY ORDEN ASC";
 									$qry_campos=mysqli_query($result_coneccion,$qry_camp);
 									$res_campos = mysqli_fetch_assoc($qry_campos);
 											/*Ver en no data found*/
-									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]." AS ".$res_campos["NOMENCLATURA"].", "."CONCAT(";
+									$qry_fin = $qry_fin.$res_campos["OPERACION"]."(".$res_campos["ID_TABLA"].$res_campos["CAMPO"]." ".$res_campos["OPERANDO"]." ".$res_campos["ID_TABLA_2"].$res_campos["CAMPO2"].") AS ".$res_campos["NOMENCLATURA"].", "."CONCAT(";
 									$res_campos = mysqli_fetch_assoc($qry_campos); //FALTA VALIDAR CANTIDAD DE REGISTROS
 									$qry_fin = $qry_fin.$res_campos["ID_TABLA"].$res_campos["CAMPO"]; //." AS ".$res_campos["NOMENCLATURA"]
 									while ($res_campos = mysqli_fetch_assoc($qry_campos)){
