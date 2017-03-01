@@ -52,7 +52,7 @@
 			
 //Insert en VENTAS_CAB 
 			
-			$query="UPDATE u845291486_reina.PEDIDOS SET CANTIDAD_ENTREG =".$cant" WHERE ID_PEDIDO=".$pedido;
+			$query="UPDATE u845291486_reina.PEDIDOS SET CANTIDAD_ENTREG =".$cant." WHERE ID_PEDIDO=".$pedido;
 	        $resultado=mysqli_query($result_coneccion,$query);
 
 //Fin insercion
