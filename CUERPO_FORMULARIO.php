@@ -101,7 +101,7 @@
 									};
 									/*Fin Obtiene clausulas a seleccionar*/				
 
-									//echo $qry_fin;
+									echo $qry_fin;
 									$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
 									while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
 																		
