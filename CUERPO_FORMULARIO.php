@@ -87,8 +87,11 @@
 											$qry_fin = $qry_fin.$res_campos["ID_TABLA_1"].$res_campos["CAMPO_1"].$res_campos["OPERADOR"].$res_campos["ID_TABLA_2"].$res_campos["CAMPO_2"].$res_campos["VALOR_FIJO_INT"].$res_campos["VALOR_FIJO_CHAR"].$res_campos["VALOR_FIJO_DATE"];
 										};
 										/*Fin Obtiene clausulas a seleccionar*/				
-
+										
+										/*ORDEN MOMENTANEO*/
+										$qry_fin = $qry_fin." ORDER BY DETALLE";
 										echo $qry_fin;
+										
 										$qry_res_fin=mysqli_query($result_coneccion,$qry_fin);
 										while ($seleccion = mysqli_fetch_assoc($qry_res_fin)) {
 											$valor = $seleccion["COD"];
@@ -106,7 +109,7 @@
 							?>		
 						</p>	
 						<br>
-						<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> 
+					<!--	<input type ="hidden" name = "Usuario" value = <?php echo $usuario['USUARIO']; ?>> -->
 						<p align="center">
 							<input type="submit" value="Ingresar">
 							<input type="reset" value="Cancelar">
@@ -114,7 +117,7 @@
 					</form>
 					<br><br>
 					<form action="SELECCION_FORMULARIO.php" method="post">
-						<input type ="hidden" name = "Usuario" value = <?php echo $_POST['Usuario']; ?> >
+					<!--	<input type ="hidden" name = "Usuario" value = <?php echo $_POST['Usuario']; ?> > -->
 						<input type="submit" value="Volver a la seleccion de Formulario">
 					</form>
 				</td>

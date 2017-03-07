@@ -22,17 +22,17 @@
 				echo "<b>Error".mysql_errno.": ".mysql_error()."</b>";
 				}{
 			//Conexion correcta
-				session_start();
+				/*session_start();
 				$_SESSION['Usuario']=$_POST['Usuario'];
 				$_SESSION['Clave']=$_POST['Clave'];					
 				
 				$sql="SELECT USUARIO FROM u845291486_reina.USUARIOS WHERE NOMBRE='".$_POST[Usuario]."'";
 				$result=mysqli_query($result_coneccion,$sql);
-				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	
+				$usuario=mysqli_fetch_array($result, MYSQLI_ASSOC);	*/
 			}
 			?>	
 			<?php 	
-				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM";
+				$query="SELECT ID_FORM,NOMBRE,ACCION FROM u845291486_reina.CABFORM WHERE ACTIVO = 0 ORDER BY ORDEN,NOMBRE";
 				$resultado=mysqli_query($result_coneccion,$query);
 				/*$form = mysqli_fetch_array($resultado,MYSQLI_ASSOC)*/
 			?>				
