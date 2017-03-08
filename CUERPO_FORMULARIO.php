@@ -42,9 +42,8 @@
 								$resultado=mysqli_query($result_coneccion,$query);
 								while ($form = mysqli_fetch_assoc($resultado)) {
 									$requerido='';
-									$min='';
+									$min=$form["MIN"];
 									if ($form["REQUERIDO"] = 'V') {$requerida = 'required';};
-									if ($form["MIN"] != null) {$min = 'min';};
 									echo $form["NOMBRE_CAMPO"].': ';
 									if ($form["TIPO"] == "SELECT") {
 										$qry_fin = "SELECT ";
@@ -103,7 +102,7 @@
 										echo '</select>';
 									}	
 									else {
-										echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.'>'; 
+										echo '<input type = "'.$form["TIPO"].'" name="'.$form["NOMBRE_CAMPO"].'"'.$requerida.' min="'.$min.'"'.'>'; 
 									};
 									echo '<br><br>';
 									echo $_POST['ID_FORM'];
