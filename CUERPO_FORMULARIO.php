@@ -38,11 +38,13 @@
 						<p> FORMULARIO <?php echo $form_cab["NOMBRE"]?> </p> 			
 						<p align="right">
 							<?php 	
-								$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO,REQUERIDO,ID_LOV FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
+								$query="SELECT NOMBRE_CAMPO,TIPO,PREDETERMINADO,REQUERIDO,MIN,ID_LOV FROM u845291486_reina.RENFORM WHERE ID_FORM=".$_POST['FORMULARIO']." ORDER BY ORDEN";
 								$resultado=mysqli_query($result_coneccion,$query);
 								while ($form = mysqli_fetch_assoc($resultado)) {
 									$requerido='';
+									$min='';
 									if ($form["REQUERIDO"] = 'V') {$requerida = 'required';};
+									if ($form["MIN"] != null) {$min = 'min';};
 									echo $form["NOMBRE_CAMPO"].': ';
 									if ($form["TIPO"] == "SELECT") {
 										$qry_fin = "SELECT ";
